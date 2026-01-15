@@ -1,0 +1,2 @@
+# Secure-Multi-Branch-Enterprise-Network-Architecture-Training-Project-IPv4-IPv6-
+It is an enterprise-grade Blue Team network security simulation designed and implemented using Cisco Packet Tracer. The project demonstrates a secure, scalable enterprise network connecting a Headquarters (HQ) with four remote branches, following best practices in routing, firewalling, VPN, Layer 2 security, and dual-stack IPv4/IPv6 deployment.
