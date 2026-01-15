@@ -1,0 +1,122 @@
+*** Configure Role-Based CLI ***
+ 
+parser view HR_VIEW
+secret hr123
+commands exec include show version
+commands exec include show clock
+commands exec include show parser view
+commands exec include ping
+commands exec include traceroute
+
+exit
+
+parser view ADMIN_VIEW
+secret admin123
+! Adding general show commands
+commands exec include show
+commands exec include show version
+commands exec include show ip interface brief
+commands exec include show running-config
+commands exec include show ip route
+commands exec include show parser view
+commands exec include show interfaces
+commands exec include show vlan brief
+commands exec include show log
+
+! Adding configuration commands
+commands exec include configure terminal
+commands exec include configure
+commands exec include reload
+
+! Adding additional network commands
+commands exec include ping
+commands exec include traceroute
+commands exec include clear ip route
+commands exec include debug ip packet
+
+exit
+
+
+parser view PR_VIEW
+secret pr123
+commands exec include show interfaces
+commands exec include show version
+commands exec include show parser view
+commands exec include ping
+commands exec include traceroute
+
+
+exit
+
+parser view SOC_VIEW
+secret soc123
+
+! Adding general show commands
+commands exec include show
+commands exec include show version
+commands exec include show ip interface brief
+commands exec include show running-config
+commands exec include show ip route
+commands exec include show parser view
+commands exec include show interfaces
+commands exec include show vlan brief
+commands exec include show log
+
+! Adding configuration commands
+commands exec include configure terminal
+commands exec include configure
+commands exec include reload
+
+! Adding additional network commands
+commands exec include ping
+commands exec include traceroute
+commands exec include clear ip route
+commands exec include debug ip packet
+
+exit
+
+parser view IT_VIEW
+secret it123
+commands exec include show
+commands exec include ping
+commands exec include reload
+commands exec include show parser view
+commands exec include configure
+commands exec include reload
+
+exit
+
+parser view SALES_VIEW
+secret sales123
+commands exec include ping
+commands exec include show parser view
+commands exec include traceroute
+
+exit
+
+parser view OPS_VIEW
+secret ops123
+commands exec include ping
+commands exec include show ip route
+commands exec include show interfaces
+commands exec include show parser view
+commands exec include traceroute
+
+exit
+
+parser view QA_VIEW
+secret qa123
+commands exec include show running-config
+commands exec include show version
+commands exec include show clock
+commands exec include show parser view
+commands exec include ping
+commands exec include traceroute
+
+exit
+
+aaa new-model
+aaa authentication login default local
+username Admin1 privilege 15 secret Admin123
+line console 0
+login local

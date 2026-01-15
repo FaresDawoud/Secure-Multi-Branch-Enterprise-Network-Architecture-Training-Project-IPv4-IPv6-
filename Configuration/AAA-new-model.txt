@@ -1,0 +1,19 @@
+aaa new-model
+tacacs-server host 10.11.12.2 key cisco
+radius server Radius-Server
+address ipv4 10.11.12.34 auth-port 1645
+key cisco
+aaa authentication login default group tacacs+ group radius local-case
+line console 0
+login authentication default
+line vty 0 4
+login authentication default
+
+aaa new-model
+tacacs-server host 10.11.12.2 key cisco
+radius-server host 10.11.12.34 key cisco
+aaa authentication login default group radius group tacacs+ local-case
+line console 0
+login authentication default
+line vty 0 4
+login authentication default

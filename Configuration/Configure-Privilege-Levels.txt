@@ -1,0 +1,61 @@
+*** Configure Privilege Levels ***
+
+!VLAN 10 (Branch1-HR)
+username HR1 privilege 10 secret HR123
+username HR1 privilege 10
+privilege exec level 10 ping
+exit
+
+!VLAN 20 (Branch1-Admin)
+username Admin1 privilege 15 secret Admin123
+username Admin1 privilege 15
+exit
+
+!VLAN 30 (Branch1-PR)
+username PR1 privilege 5 secret PR123
+username PR1 privilege 5
+privilege exec level 5 show ip route
+privilege exec level 5 ping
+exit
+
+!-----------------------------------------------------
+
+!VLAN 40 (Branch1-SOC)
+username SOC1 privilege 15 secret SOC123
+username SOC1 privilege 15
+exit
+
+!VLAN IT (Branch1-IT)
+username IT1 privilege 10 secret IT123
+username IT1 privilege 10
+privilege exec level 10 show ip route
+privilege exec level 10 ping
+privilege exec level 10 reload
+privilege exec level 10 show running-config
+exit
+
+!VLAN 60 (Branch1-Sales)
+username Sales1 privilege 2 secret Sales123
+username Sales1 privilege 2
+privilege exec level 2 ping
+privilege exec level 2 show ip interface brief
+exit
+
+!-----------------------------------------------------
+
+!VLAN 70 (Branch1-Ops)
+username Ops1 privilege 10 secret Ops123
+username Ops1 privilege 10
+privilege exec level 10 show ip route
+privilege exec level 10 ping
+privilege exec level 10 reload
+privilege exec level 10 show running-config
+exit
+
+!VLAN 80 (Branch1-QA)
+username QA1 privilege 5 secret QA123
+username QA1 privilege 5
+privilege exec level 5 show ip interface brief
+privilege exec level 5 show
+privilege exec level 5 ping
+exit	
